@@ -1,0 +1,23 @@
+{
+  "brand": {
+    "name": "Example Graduate",
+    "slug": "example-graduate",
+    "type": "graduate",
+    "institution": "Example University"
+  },
+  "show": {
+    "title": "MA Fashion Graduate Show 2026",
+    "slug": "example-graduate-ma-2026",
+    "season": "Graduate",
+    "year": 2026,
+    "event": "Example University Graduate Show",
+    "show_date": "2026-06-20",
+    "description": "Replace with a real show you have permission to display.",
+    "video_url": "https://www.youtube.com/watch?v=VIDEO_ID",
+    "licence_status": "licensed"
+  },
+  "looks": [
+    { "look_number": 1, "image_url": "https://placehold.co/600x900/png?text=Look+1", "photographer_credit": "Photographer Name" },
+    { "look_number": 2, "image_url": "https://placehold.co/600x900/png?text=Look+2", "photographer_credit": "Photographer Name" }
+  ]
+}
