@@ -14,7 +14,13 @@ Log, rate and review fashion runway shows, in the style of Letterboxd.
 - Python script to import shows from JSON
 
 ## Run it locally
-Requires Node 20+ and Docker (for the local Supabase).
+Requires Node 20+, Docker Desktop (running), and the Supabase CLI:
+
+- **Mac:** `brew install supabase/tap/supabase`
+- **Windows:** `scoop bucket add supabase https://github.com/supabase/scoop-bucket.git` then `scoop install supabase`
+- **Linux:** download from https://github.com/supabase/cli/releases
+
+(The CLI is installed separately rather than as an npm package, because its npm installer downloads a large binary and often hangs during `npm install`.)
 
 ```bash
 npm install
@@ -31,9 +37,9 @@ Local Studio (database dashboard): http://127.0.0.1:54323 · Local test emails: 
 1. Create a project at supabase.com.
 2. Link it and push the schema:
    ```bash
-   npx supabase login
-   npx supabase link --project-ref YOUR_PROJECT_REF
-   npx supabase db push
+   supabase login
+   supabase link --project-ref YOUR_PROJECT_REF
+   supabase db push
    ```
    Alternatively, paste `supabase/migrations/*.sql` into the dashboard SQL Editor.
 3. **Authentication → URL Configuration:** set the Site URL to your domain and add `https://YOUR_DOMAIN/auth/confirm` to the redirect URLs.
@@ -78,7 +84,7 @@ Security: brands, shows and looks can be read by anyone, and they can only be ch
 
 ## Changing the schema
 ```bash
-npx supabase migration new add_something   # creates a new SQL file
+supabase migration new add_something   # creates a new SQL file
 npm run db:reset                           # re-applies all migrations locally
 npm run db:types                           # regenerates TypeScript types
 ```
